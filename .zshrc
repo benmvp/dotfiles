@@ -113,6 +113,12 @@ alias mkdir='mkdir -pv'
 # v = verbose
 alias cp='cp -iv'
 
+# quick jumps
+alias ~="cd ~"
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+
 # list PATH with each director newlined
 alias path='echo -e ${PATH//:/\\n}'
 
