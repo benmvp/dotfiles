@@ -1,20 +1,31 @@
 [user]
-  name = Kyle Welch
-  email = kwelch0626@gmail.com
+  name = Ben Ilegbodu
+  email = ben@benmvp.com
 [color]
   status = auto
   branch = auto
   interactive = auto
   diff = auto
 [alias]
-  st = "status -sb"
-  co = "checkout"
-  # check out and pull all in one call; `:` at the end it to fix how git appends params
-  chp = !git checkout $1 && git pull && :
-  nb = "checkout -b"
+  a = add
+  br = branch -vv
+  ci = commit
+  cl = clone
+  co = checkout
+  df = diff
+	dt = difftool --no-prompt
+  lg = log -p
+  h = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  st = status
+  pl = pull
+  pr = pull --rebase
+  pu = push
+  r = remote
+  ru = remote update
+  sb = show-branch
 [core]
   editor="code --wait"
-	excludesfile = /Users/kwelch/.gitignore_global
+	excludesfile = /Users/benmvp/.gitignore_global
 [diff]
     tool = vscode
 [difftool "vscode"]
@@ -24,5 +35,7 @@
 [push]
   # auto attach upstream with same name as local branch
 	default = current
+[pull]
+  rebase = true
 [init]
 	defaultBranch = main

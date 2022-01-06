@@ -8,13 +8,13 @@ export ZSH="${HOME}/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="geoffgarside"
+ZSH_THEME="random"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "geoffgarside" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -79,13 +79,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -98,12 +91,36 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Save me from making a horrible mistake one day
+alias rm=trash
+
+# Just make hub git
+alias git=hub
+
+# long format with additional settings
+### F = adds special character to indicate usage
+### G = color
+### l = long list format
+### A = skips `.` & `...`
+### h = use M/K/G for size
+alias ll='ls -FGlah'
+
+# p = create dirs missing in path
+# v = list as they are created
+alias mkdir='mkdir -pv'
+
+# i = interactive
+# v = verbose
+alias cp='cp -iv'
+
+# list PATH with each director newlined
+alias path='echo -e ${PATH//:/\\n}'
+
 
 ## Ideally, I wouldn't need the home part, but I cannot figure out how to make these relative when linked
-export DOTFILE_REPO=$HOME/_git/dotfiles
+export DOTFILE_REPO=$HOME/github/benmvp/dotfiles
 
-source $DOTFILE_REPO/terminal-helpers/path-alteration.sh
+# source $DOTFILE_REPO/terminal-helpers/path-alteration.sh
 source $DOTFILE_REPO/terminal-helpers/set-editor.sh
 source $DOTFILE_REPO/terminal-helpers/nvm-setup.sh
 source $DOTFILE_REPO/terminal-helpers/setup-branch-functions.sh
-source "$HOME/.cargo/env"
